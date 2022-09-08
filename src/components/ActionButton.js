@@ -29,7 +29,7 @@ const ActionButton = ({ tokenName, setTxExecuted, action, args }) => {
           contractWrite.writeAsync().catch((error) => console.log(error.message))
         }}
       >
-        <p>
+        <p className="text-center">
           {contractWrite.status === "idle" && `${action.toUpperCase()} ${tokenName}`}
           {contractWrite.status === "loading" && "Wating approval..."}
           {contractWrite.status === "error" && `${action.toUpperCase()} ${tokenName}`}
