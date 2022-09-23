@@ -1,0 +1,28 @@
+.header-container {
+  height: 80px;
+  width: 100%;
+}
+
+nav {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  width: 300px;
+  text-decoration: none;
+  color: var(--font-color);
+  text-align: start;
+  margin-left: 16px;
+}
+
+.connect-button {
+  width: 192px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-right: 16px;
+}

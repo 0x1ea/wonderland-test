@@ -1,0 +1,15 @@
+.action-button {
+  background-color: #3b82f6;
+  display: flex;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 64px;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.text-button {
+  text-align: center;
+}

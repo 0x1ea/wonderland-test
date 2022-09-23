@@ -1,0 +1,28 @@
+.card-container {
+  background-color: var(--secondary-color);
+  max-width: 600px;
+  width: auto;
+  border-radius: 12px;
+  margin: 0 auto;
+  padding: 12px;
+}
+
+.card-title {
+  font-weight: 700;
+}
+
+input {
+  color: var(--font-color);
+  background-color: #1e293b;
+  border: none;
+  font-size: large;
+  border-radius: 8px;
+  width: 100%;
+  padding: 8px;
+  margin: 12px auto;
+}
+
+.card-text {
+  margin-top: 12px;
+  font-weight: 300;
+}
