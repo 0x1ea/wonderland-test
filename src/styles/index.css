@@ -26,3 +26,39 @@ h2 {
 p {
   padding: 8px 0;
 }
+
+h1 {
+  font-weight: 500;
+  margin-top: 28px;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: large;
+}
+
+.buttons-section {
+  display: flex;
+}
+
+.wait-button {
+  background-color: #ff494a;
+  display: flex;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 64px;
+  opacity: 60%;
+}
+
+input {
+  color: var(--font-color);
+  background-color: #1e293b;
+  border: none;
+  font-size: large;
+  border-radius: 8px;
+  width: 100%;
+  padding: 8px;
+  margin: 12px auto;
+}

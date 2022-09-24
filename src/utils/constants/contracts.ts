@@ -1,9 +1,4 @@
-let initialState = {
-  daiAmount: "",
-  usdcAmount: "",
-  recipient: "",
-  txOngoing: false,
-  showButton: false,
+let contracts = {
   DAI: {
     address: "0x1D70D57ccD2798323232B2dD027B3aBcA5C00091",
     abi: [
@@ -1405,4 +1400,4 @@ let initialState = {
   },
 };
 
-export default initialState;
+export { contracts };

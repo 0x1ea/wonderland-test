@@ -1,45 +1,30 @@
 import { useContext } from "react";
 import AppContext from "../context/AppContext";
-import {
-  usePrepareContractWrite,
-  useWaitForTransaction,
-  useContractWrite,
-} from "wagmi";
+import useContracts from "../hooks/useContracts";
 import "../styles/ActionButton.css";
 
 const ActionButton = (props: {
   tokenName: string | number;
   action: any;
   args: any;
-  setTxExecuted: (arg0: boolean) => void;
 }) => {
   const { state } = useContext(AppContext);
 
-  const { config } = usePrepareContractWrite({
-    addressOrName: state[props.tokenName].address,
-    contractInterface: state[props.tokenName].abi,
-    functionName: props.action,
-    args: props.args,
-  });
-  const contractWrite = useContractWrite(config);
-
-  const contractWait = useWaitForTransaction({
-    hash: contractWrite.data?.hash,
-    onSuccess() {
-      props.setTxExecuted(true);
-      setTimeout(() => {
-        props.setTxExecuted(false);
-      }, 1000);
-    },
-  });
+  const { contractWrite, contractWait, setTxOngoing } = useContracts(
+    props.tokenName,
+    props.action,
+    props.args
+  );
 
   return (
     <>
-      <div
+      <button
         className="action-button"
         onClick={() => {
+          setTxOngoing(true);
           contractWrite.write?.();
         }}
+        disabled={state.txOngoing}
       >
         <p className="text-button">
           {contractWrite.status === "idle" &&
@@ -50,7 +35,7 @@ const ActionButton = (props: {
           {contractWait.status === "loading" && "Waiting confirmation..."}
           {contractWait.status === "success" && "Transaction success!"}
         </p>
-      </div>
+      </button>
     </>
   );
 };

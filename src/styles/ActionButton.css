@@ -12,4 +12,10 @@
 
 .text-button {
   text-align: center;
+  font-weight: 700;
+}
+
+.action-button:disabled {
+  opacity: 60%;
+  cursor: auto;
 }
