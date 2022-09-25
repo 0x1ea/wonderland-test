@@ -8,7 +8,6 @@ const Header = () => {
         <a href="/">
           <h1>Wonderland</h1>
         </a>
-
         <div className="connect-button">
           <ConnectButton showBalance={false} accountStatus="address" />
         </div>

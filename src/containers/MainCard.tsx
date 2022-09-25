@@ -44,7 +44,7 @@ const MainCard = () => {
     <>
       <div className="card-container">
         <RecipientInput />
-        {state.showButton && (
+        {state.showButton ? (
           <div>
             <TokenData
               tokenName={"DAI"}
@@ -88,12 +88,11 @@ const MainCard = () => {
               decimals={6}
             />
           </div>
+        ) : (
+          <p className="card-text">
+            *You must be connected to Goerli and type a valid address
+          </p>
         )}
-        <p className="card-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-          lacinia erat tortor, eget auctor libero bibendum sit amet. Mauris ut
-          eleifend sapien.
-        </p>
       </div>
     </>
   );
