@@ -2,14 +2,15 @@ import { useContext, useEffect } from "react";
 import { ethers } from "ethers";
 import { useAccount, useNetwork } from "wagmi";
 
-import SendCard from "./SendSection";
+import Header from "../components/Header";
+import RecipientInput from "../components/RecipientInput";
+import SendCard from "../components/SendSection";
+import TokenData from "../components/TokenData";
 import AppContext from "../context/AppContext";
 import useToken from "../hooks/useToken";
-import TokenData from "../components/TokenData";
-import RecipientInput from "../components/RecipientInput";
 import "../styles/MainCard.css";
 
-const MainCard = () => {
+const Dashboard = () => {
   const { isConnected } = useAccount();
   const { chain } = useNetwork();
   const { address } = useAccount();
@@ -42,6 +43,7 @@ const MainCard = () => {
 
   return (
     <>
+      <Header />
       <div className="card-container">
         <RecipientInput />
         {state.showButton ? (
@@ -98,4 +100,4 @@ const MainCard = () => {
   );
 };
 
-export default MainCard;
+export default Dashboard;

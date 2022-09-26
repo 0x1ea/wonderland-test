@@ -1,7 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./styles/index.css";
-import App from "./App";
 import "@rainbow-me/rainbowkit/styles.css";
 import {
   getDefaultWallets,
@@ -10,6 +8,8 @@ import {
 } from "@rainbow-me/rainbowkit";
 import { WagmiConfig, chain, createClient, configureChains } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
+import App from "./App";
+import "./styles/index.css";
 
 const { chains, provider } = configureChains(
   [chain.goerli],

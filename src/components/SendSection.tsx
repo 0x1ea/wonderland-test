@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ethers } from "ethers";
 import AppContext from "../context/AppContext";
-import ActionButton from "../components/ActionButton";
+import ActionButton from "./ActionButton";
 
 const SendCard = (props: {
   tokenName: string | number;
