@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import AppContext from "../context/AppContext";
 import useContracts from "../hooks/useContracts";
 import "../styles/ActionButton.css";
@@ -22,7 +22,7 @@ const ActionButton = (props: {
         className="action-button"
         onClick={() => {
           setTxOngoing(true);
-          contractWrite.write?.();
+          contractWrite.writeAsync?.().catch(() => setTxOngoing(false));
         }}
         disabled={state.txOngoing}
       >
