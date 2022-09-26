@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import AppContext from "../context/AppContext";
 import useContracts from "../hooks/useContracts";
 import "../styles/ActionButton.css";
