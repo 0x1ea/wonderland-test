@@ -11,9 +11,8 @@ import useToken from "../hooks/useToken";
 import "../styles/MainCard.css";
 
 const Dashboard = () => {
-  const { isConnected } = useAccount();
+  const { isConnected, address } = useAccount();
   const { chain } = useNetwork();
-  const { address } = useAccount();
 
   const { state, addUsdcAmount, addDaiAmount, setShowButton } =
     useContext(AppContext);
